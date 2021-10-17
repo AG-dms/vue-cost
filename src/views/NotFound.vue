@@ -1,5 +1,5 @@
 <template>
-  <div>Choose dashboard</div>
+  <div>Hi! Choose dashboard</div>
 </template>
 
 <script>
