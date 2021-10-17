@@ -2,12 +2,21 @@
   <div class="context">
     <div class="arrow"></div>
     <div class="context-content">
-      <span class="lnr lnr-cross closePop" @click="closePop"></span>
+      <span
+        class="lnr lnr-cross closePop"
+        @click="closePop"
+      ></span>
       <div class="context-line">
         <span class="lnr lnr-pencil context-icon"></span>
-        <span class="content-text" @click="changePayment">Редактировать</span>
+        <span
+          class="content-text"
+          @click="changePayment"
+        >Редактировать</span>
       </div>
-      <div class="context-line" @click="deletePayment">
+      <div
+        class="context-line"
+        @click="deletePayment"
+      >
         <span class="lnr lnr-trash context-icon"></span>
         <span class="content-text">Удалить</span>
       </div>
@@ -36,7 +45,7 @@ export default {
     },
     async deletePayment() {
       await axios.delete(
-        `https://cost-vue-default-rtdb.firebaseio.com/payments/${
+        `https://cost-vue-cli-default-rtdb.firebaseio.com/payments/${
           this.settings.item.id - 1
         }.json`
       );
