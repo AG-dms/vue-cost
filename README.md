@@ -1,24 +1,24 @@
-# cost_vue
 
-## Project setup
-```
-npm install
-```
+# Проект на vue
+### Приложение по контролю и учёту расходов
+![](https://i.ibb.co/1v7rCBG/1-18.gif)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+---
+###Возможности:
+- Добавлять / редкатировать / удалять платежи
+- Разделять затраты по категориям
+- Добавлять новые категории
+- Смотреть информацию по затратам на графике
+- Добавлять быстрые (часто повторяющиеся) платежи
+---
+### Использованные технологии:
+- vue 2
+- vue router
+- vuex
+- верстка с использованием vuetify
+- firebase (хранение данных их обработка и изменениие)
+---
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
