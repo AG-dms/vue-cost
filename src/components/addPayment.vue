@@ -18,6 +18,11 @@
           label="value"
         ></v-text-field>
       </div>
+      <p
+        class="errorMsg"
+        v-if="isNumber"
+      >
+        Сумма платежа должна быть записанна числом</p>
       <v-btn
         v-if="btn"
         color="teal"
@@ -109,6 +114,7 @@ export default {
       date: "",
       category: null,
       value: null,
+      isNumber: false,
     };
   },
   methods: {
@@ -143,26 +149,32 @@ export default {
       this.category = data;
     },
     async addPayment() {
-      const { category, value } = this;
-      const data = {
-        key: this.paymentIdx,
-        date: this.tooday,
-        category,
-        value,
-        id: this.paymentIdx + 1,
-      };
-      if (this.getValueQueryFromRoute && this.getCategoryParamFromRoute) {
-        this.$store.commit("addDataToPaymentList", data);
-        this.$router.push("/dashboard");
+      if (typeof this.value !== "number") {
+        console.log("no");
+        this.isNumber = true;
       } else {
-        await axios.put(
-          `https://cost-vue-cli-default-rtdb.firebaseio.com/payments/${data.key}.json`,
-          data
-        );
-        this.$store.commit("addDataToPaymentList", data);
-        this.$popUp.hidePopUp();
-        this.$parent.$emit("test");
-        this.$modal.hide();
+        const { category, value } = this;
+        const data = {
+          key: this.paymentIdx,
+          date: this.tooday,
+          category,
+          value,
+          id: this.paymentIdx + 1,
+        };
+        if (this.getValueQueryFromRoute && this.getCategoryParamFromRoute) {
+          this.$store.commit("addDataToPaymentList", data);
+          this.$router.push("/dashboard");
+        } else {
+          await axios.put(
+            `https://cost-vue-cli-default-rtdb.firebaseio.com/payments/${data.key}.json`,
+            data
+          );
+          this.$store.commit("addDataToPaymentList", data);
+          this.$popUp.hidePopUp();
+          this.$parent.$emit("test");
+          this.$modal.hide();
+          this.isNumber = false;
+        }
       }
     },
   },
@@ -173,4 +185,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.errorMsg {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+</style>

@@ -58,7 +58,6 @@ export default new Vuex.Store({
             const {
                 data
             } = await axios.get('https://cost-vue-cli-default-rtdb.firebaseio.com/payments.json');
-            console.log(data)
             data.reverse()
 
             setTimeout(() => {

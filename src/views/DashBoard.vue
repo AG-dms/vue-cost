@@ -14,9 +14,6 @@
           :payment="currentElements"
         ></payment-display>
 
-        <!-- <v-pagination previous next v-model="list" :length="amount" :value="0">
-    </v-pagination> -->
-
         <pagination-hard
           @paginate="OnChange"
           :n="n"

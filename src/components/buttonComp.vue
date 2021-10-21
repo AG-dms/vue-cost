@@ -1,14 +1,14 @@
   <template>
-  <v-btn color="teal" dark @click="showPaymentForm"
-    >{{ text }} <v-icon>mdi-plus</v-icon></v-btn
-  >
-  <!-- <button @click="showPaymentForm">
-    {{ text }}
-  </button> -->
+  <v-btn
+    color="teal"
+    dark
+    @click="showPaymentForm"
+  >{{ text }} <v-icon>mdi-plus</v-icon>
+  </v-btn>
+
 </template>
 
   <script>
-// import axios from "axios";
 export default {
   props: ["expandOpen"],
   computed: {

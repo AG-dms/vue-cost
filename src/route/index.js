@@ -1,9 +1,6 @@
 import Vue from "vue"
 import Router from "vue-router"
-// import DashBoard from '../views/DashBoard';
-// import About from '../views/About';
-// import NotFound from '../views/NotFound';
-// import addPayment from "@/components/addPayment.vue";
+
 
 Vue.use(Router);
 

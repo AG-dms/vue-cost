@@ -16,11 +16,9 @@
 
 <script>
 import AddPayment from "./addPayment.vue";
-import Calc from "../components/calc.vue";
 export default {
   components: {
     "add-payment": AddPayment,
-    Calc,
   },
   props: {
     btn: Boolean,

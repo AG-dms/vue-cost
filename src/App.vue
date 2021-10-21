@@ -5,10 +5,6 @@
         plain
         to="/dashboard"
       > dashboard </v-btn>
-      <!-- <v-btn
-        plain
-        to="/calc"
-      > Calculator </v-btn> -->
     </v-app-bar>
 
     <v-main>

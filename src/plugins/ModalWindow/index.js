@@ -16,9 +16,6 @@ export default {
             hide() {
                 this.EventBus.$emit("hide")
             },
-            // showPopUp(){
-            //     console.log
-            // }
         }
     }
 }
